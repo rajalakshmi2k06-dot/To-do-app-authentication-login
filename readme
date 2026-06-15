@@ -1,0 +1,137 @@
+# TaskFlow ✓
+> A full stack todo app with user authentication, built with Flask and Vanilla JS.
+
+---
+
+## 🖥️ Screenshots
+![Taskflow login page](login-2.png)
+![Task flow dashboard page](dashboard-1.png)
+![Task flow add page](<add task-1.png>)
+![Task flow edit before page](<edit before-1.png>)
+![Task flow after edit page](<after edit-1.png>)
+![Task completed page](<task completed-1.png>)
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | HTML, CSS, Vanilla JavaScript |
+| Backend | Python, Flask, Flask-CORS |
+| Database | MySQL |
+| Auth | Session-based login |
+
+---
+
+## ✨ Features
+
+- ✅ User Registration & Login
+- ✅ Session-based Authentication
+- ✅ Create / Read / Update / Delete tasks
+- ✅ Task status toggle (Pending → Done)
+- ✅ Per-user task isolation
+- ✅ Dark theme UI with animated background
+- ✅ Responsive design
+
+---
+
+## 📁 Project Structure
+
+```
+taskflow/
+├── app.py          # Flask backend - all API routes
+├── database.py     # MySQL connection config
+├── database.sql    # Table creation + sample data
+├── login.html      # Login & Register page
+├── todo.html       # Main todo dashboard
+├── requirements.txt
+└── .gitignore
+```
+
+---
+
+## 🚀 Local Setup — How to Run
+
+### Step 1 — Clone the repo
+```bash
+git clone https://github.com/your-username/taskflow.git
+cd taskflow
+```
+
+### Step 2 — Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Step 3 — Setup MySQL database
+```bash
+# MySQL-ல login பண்ணு
+mysql -u root -p
+
+# Database create பண்ணு
+CREATE DATABASE todo_app;
+
+# SQL file run பண்ணு
+source database.sql;
+```
+
+### Step 4 — Update database config
+`database.py` file-ல உன்னோட MySQL password போடு:
+```python
+DB_CONFIG = {
+    "host": "localhost",
+    "user": "root",
+    "password": "your_password_here",  # ← இங்க மாத்து
+    "database": "todo_app"
+}
+```
+
+### Step 5 — Run the app
+```bash
+python app.py
+```
+
+### Step 6 — Open in browser
+```
+http://localhost:5000
+```
+
+**Default login:** `admin` / `admin123`
+
+---
+
+## 🔌 API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/register` | New user create |
+| POST | `/api/login` | User login |
+| POST | `/api/logout` | Logout |
+| GET | `/api/todos?user_id=1` | Get all todos |
+| POST | `/api/todos` | Create todo |
+| PUT | `/api/todos/:id` | Update todo |
+| DELETE | `/api/todos/:id` | Delete todo |
+| PATCH | `/api/todos/:id/status` | Toggle status |
+
+---
+
+## 🔮 Future Improvements
+
+- [ ] Password hashing (bcrypt)
+- [ ] Due date for tasks
+- [ ] Priority levels (High / Medium / Low)
+- [ ] Dark / Light mode toggle
+- [ ] Deploy to Render / Railway
+
+---
+
+## 👨‍💻 Author
+
+Rajalakshmi P
+CS Graduate | Aspiring Full Stack Developer fresher 
+[LinkedIn](https://www.linkedin.com/in/raja-lakshmi-408818412/) · [GitHub](🔗 https://github.com/asiva5249-ui)
+
+---
+
+> Built with 💙 using Flask + Vanilla JS
