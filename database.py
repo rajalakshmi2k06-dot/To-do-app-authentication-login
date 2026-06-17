@@ -1,12 +1,12 @@
 import mysql.connector
-
-DB_CONFIG = {
-    "host": "localhost",
-    "user": "root",          # உன்னோட MySQL username
-    "password": "",  # உன்னோட MySQL password
-    "database": "todo_app"
-}
+import os
 
 def get_connection():
-    conn = mysql.connector.connect(**DB_CONFIG)
+    conn = mysql.connector.connect(
+        host=os.environ.get("MYSQLHOST"),
+        port=int(os.environ.get("MYSQLPORT", 3306)),
+        user=os.environ.get("MYSQLUSER"),
+        password=os.environ.get("MYSQLPASSWORD"),
+        database=os.environ.get("MYSQLDATABASE")
+    )
     return conn
