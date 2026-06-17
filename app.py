@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify, session, send_from_directory
 from flask_cors import CORS
-from database import get_connection
+from database import get_connection, init_db
 import os
 
 app = Flask(__name__)
 app.secret_key = "todo_secret_key_2024"
-CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True)init_db()  
 
 
 # ─────────────────────────────────────────────
